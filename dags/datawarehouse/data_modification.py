@@ -8,7 +8,7 @@ def insert_rows(cursor,conn, schema,row):
     try:
         if schema == 'staging':
             
-            video_ids = 'video_id'
+            video_id = 'video_id'
 
             cursor.execute(
                 f"""INSERT INTO {schema}.{table}(
@@ -22,8 +22,8 @@ def insert_rows(cursor,conn, schema,row):
 
             cursor.execute(
                 f"""INSERT INTO {schema}.{table}(
-                "video_id", "title", "published_at", "duration", "view_count", "like_count", "comment_count"
-            ) VALUES (%(video_id)s, %(title)s, %(published_at)s, %(duration)s, %(view_count)s, %(like_count)s,
+                "video_id", "title", "published_at", "duration","video_type", "view_count", "like_count", "comment_count"
+            ) VALUES (%(video_id)s, %(title)s, %(published_at)s, %(duration)s,%(video_type)s, %(view_count)s, %(like_count)s,
               %(comment_count)s);""",
                 row
             )

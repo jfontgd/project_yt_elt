@@ -23,7 +23,7 @@ def staging_table():
         yt_data = load_data()
 
         create_schema(schema)
-        create_table(schema, table)
+        create_table(schema,table)
 
         table_ids = get_video_ids(cursor, schema)
 
@@ -67,7 +67,7 @@ def core_table():
         conn, cursor = get_conn_cursor()
 
         create_schema(schema)
-        create_table(schema, table)
+        create_table(schema,table)
 
         table_ids = get_video_ids(cursor, schema)
 

@@ -29,27 +29,27 @@ def create_table(schema, table):
         table_sql = f"""
         CREATE TABLE IF NOT EXISTS {schema}.{table} (
         
-         'video_id' VARCHAR(255) PRIMARY KEY NOT NULL,
-         'title'    VARCHAR(255) NOT NULL,
-         'published_at' TIMESTAMP NOT NULL,
-         'duration' VARCHAR(255) NOT NULL,
-         'view_count' INTEGER,
-         'like_count' INTEGER,
-         'comment_count' INTEGER
+         "video_id" VARCHAR(255) PRIMARY KEY NOT NULL,
+         "title"    VARCHAR(255) NOT NULL,
+         "published_at" TIMESTAMP NOT NULL,
+         "duration" VARCHAR(255) NOT NULL,
+         "view_count" INTEGER,
+         "like_count" INTEGER,
+         "comment_count" INTEGER
         );
         """
     else:
         table_sql = f"""
         CREATE TABLE IF NOT EXISTS {schema}.{table} (
         
-         'video_id' VARCHAR(255) PRIMARY KEY NOT NULL,
-         'title'    VARCHAR(255) NOT NULL,
-         'published_at' TIMESTAMP NOT NULL,
-         'duration' INTEGER NOT NULL,
-         'video_type' VARCHAR(255) NOT NULL,
-         'view_count' INTEGER,
-         'like_count' INTEGER,
-         'comment_count' INTEGER
+         "video_id" VARCHAR(255) PRIMARY KEY NOT NULL,
+         "title"    VARCHAR(255) NOT NULL,
+         "published_at" TIMESTAMP NOT NULL,
+         "duration" VARCHAR(255) NOT NULL,
+         "video_type" VARCHAR(255) NOT NULL,
+         "view_count" INTEGER,
+         "like_count" INTEGER,
+         "comment_count" INTEGER
         );
         """   
     cursor.execute(table_sql)
@@ -59,7 +59,7 @@ def create_table(schema, table):
 
 def get_video_ids(cursor,schema):
 
-    cursor.execute(f"""SELECT 'video_id' FROM {schema}.{table};""")
+    cursor.execute(f"""SELECT "video_id" FROM {schema}.{table};""")
     ids= cursor.fetchall()
 
     video_ids=[row['video_id'] for row in ids]
