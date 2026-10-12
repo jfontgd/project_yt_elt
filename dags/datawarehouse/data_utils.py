@@ -1,5 +1,5 @@
 from airflow.providers.postgres.hooks.postgres import PostgresHook
-from psycopg2 import RealDictCursor
+from psycopg2.extras import RealDictCursor
 
 table = 'yt_api'
 
@@ -16,7 +16,7 @@ def close_conn_cursor(conn, cursor):
 def create_schema(schema):
     conn, cursor = get_conn_cursor()
 
-    schema_sql =  f"Create SCHEMA IF NOT EXISTS {schema}"
+    schema_sql =  f"Create SCHEMA IF NOT EXISTS {schema};"
     cursor.execute(schema_sql)
     conn.commit()
 

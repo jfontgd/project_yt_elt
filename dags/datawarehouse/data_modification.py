@@ -79,7 +79,7 @@ def update_rows(cursor, conn, schema, row):
 def delete_rows(cursor, conn, schema, ids_to_delete):
 
     try:
-        ids_to_delete = f"({', '.join(f"'{id}'" for id in ids_to_delete)})"
+        ids_to_delete = f"""({', '.join(f"'{id}'" for id in ids_to_delete)})"""
 
         cursor.execute(
             f"""DELETE FROM {schema}.{table}

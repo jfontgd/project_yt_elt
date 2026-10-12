@@ -10,7 +10,7 @@ logger = logging.getLogger(__name__)
 table = 'yt_api'
 
 @task
-def staging_table (): 
+def staging_table(): 
 
     schema = 'staging'
 
@@ -56,7 +56,7 @@ def staging_table ():
             close_conn_cursor(conn, cursor)
 
 @task
-def core_table (): 
+def core_table(): 
 
     schema = 'core'
     
