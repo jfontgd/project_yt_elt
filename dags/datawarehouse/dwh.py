@@ -33,7 +33,7 @@ def staging_table():
                 insert_rows(cursor, conn, schema, row)
 
             else:
-                if row['video_id'] not in table_ids:
+                if row['video_id'] in table_ids:
                     update_rows(cursor, conn, schema, row)
                 else:
                     insert_rows(cursor, conn, schema, row)
@@ -87,7 +87,7 @@ def core_table():
             else:
                 transformed_row = transform_data(row)
 
-                if transformed_row['video_id'] not in table_ids:
+                if transformed_row['video_id'] in table_ids:
                     update_rows(cursor, conn, schema, transformed_row)
                 else:
                     insert_rows(cursor, conn, schema, transformed_row)
