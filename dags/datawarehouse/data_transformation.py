@@ -1,5 +1,4 @@
 from datetime import timedelta, datetime
-import unittest
 
 
 def parse_duration(duration_str):
