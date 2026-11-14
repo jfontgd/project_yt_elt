@@ -34,9 +34,9 @@ def test_dags_integrity(dagbag):
 
     # 4.
     expected_task_counts = {
-        "produce_json": 4,
-        "update_db": 2,
-        "yt_elt_data_quality": 2
+        "produce_json": 5,
+        "update_db": 3,
+        "data_quality": 2
     }
     print("=======")
     for dag_id, dag in dagbag.dags.items():
